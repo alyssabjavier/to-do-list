@@ -1,0 +1,40 @@
+const content = document.querySelector('.content');
+
+function createTaskCard(task) {
+    const card = document.createElement('div');
+    card.classList.add('task');
+    // task.dataset.index = index;
+    content.appendChild(card);
+
+    const title = document.createElement('div');
+    title.textContent = task.title;
+
+    const addDate = document.createElement('div');
+    addDate.textContent = `Added: ${task.addDate}`;
+
+    const dueDate = document.createElement('div');
+    dueDate.textContent = `Due date: ${task.dueDate}`;
+
+    const priorityLevel = document.createElement('div');
+    priorityLevel.textContent = `Priority level: ${task.priorityLevel}`;
+
+    const notes = document.createElement('div');
+    notes.textContent = `Notes: ${task.notes}`;
+
+    card.appendChild(title);
+    card.appendChild(addDate);
+    card.appendChild(dueDate);
+    card.appendChild(priorityLevel);
+    card.appendChild(notes);
+
+    return card;
+}
+
+function displayArray(array) {
+    array.forEach((task) => createTaskCard(task));
+}
+
+export {
+    createTaskCard,
+    displayArray
+  };
