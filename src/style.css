@@ -1,0 +1,10 @@
+.content {
+    display: grid;
+    grid-template-columns: repat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.task {
+    border: 1px solid #ccc;
+    padding: 10px;
+}

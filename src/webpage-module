@@ -1,10 +1,11 @@
+
 const content = document.querySelector('.content');
 
 function createTaskCard(task) {
     const card = document.createElement('div');
     card.classList.add('task');
     // task.dataset.index = index;
-    const title = document.createElement('div');
+    const title = document.createElement('h3');
     title.textContent = task.title;
 
     const addDate = document.createElement('div');
@@ -19,13 +20,24 @@ function createTaskCard(task) {
     const notes = document.createElement('div');
     notes.textContent = `Notes: ${task.notes}`;
 
+    const statusBtn = document.createElement('div');
+    const toggleBtn = document.createElement("input");
+    toggleBtn.setAttribute("type", "checkbox");
+    statusBtn.appendChild(toggleBtn);
+
+    const btnLabel = document.createElement('label');
+    btnLabel.textContent = 'Completed';
+    statusBtn.appendChild(btnLabel);
+
     card.appendChild(title);
     card.appendChild(addDate);
     card.appendChild(dueDate);
     card.appendChild(priorityLevel);
     card.appendChild(notes);
+    card.appendChild(statusBtn);
 
     content.appendChild(card);
+
     return card;
 }
 

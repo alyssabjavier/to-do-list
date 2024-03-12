@@ -1,3 +1,4 @@
+import './style.css';
 import {ToDo, createToDo, createProject} from './to-do-module';
 import {createTaskCard, displayArray} from './webpage-module';
 
