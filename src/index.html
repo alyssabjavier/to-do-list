@@ -6,7 +6,53 @@
     <title>To-do</title>
 </head>
 <body>
-    <header>taskify</header>
+    <header>
+        <h1>taskify</h1>
+        <button class="addBtn">+</button>
+    </header>
+
+    <dialog>
+        <form>
+            <div class="form-item">
+                <label for="task">Task:</label>
+                <input type="text" id="task" name="task">
+            </div>
+
+            <div class="form-item">
+                <label for="add-date">Add date:</label>
+                <input type="date" id="add-date" name="add-date">
+            </div>
+
+            <div class="form-item">
+                <label for="due-date">Due date:</label>
+                <input type="date" id="due-date" name="due-date">
+            </div>
+
+            <div class="form-item">
+                <label for="level">Priority level:</label>
+                <select name="level" id="level">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label for="notes">Notes:</label>
+                <input type="text" id="notes" name="notes">
+            </div>
+
+            <div class="form-item">
+                <label for="project">Project:</label>
+                <input type="text" id="project" name="project">
+            </div>
+          
+          <button formmethod="dialog" type="submit">Cancel</button>
+          <button type="submit" id="submit-btn">Submit</button>
+        </form>
+
+      </dialog>
+
     <div class="sidebar">
 
     </div>

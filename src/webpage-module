@@ -4,8 +4,6 @@ function createTaskCard(task) {
     const card = document.createElement('div');
     card.classList.add('task');
     // task.dataset.index = index;
-    content.appendChild(card);
-
     const title = document.createElement('div');
     title.textContent = task.title;
 
@@ -27,12 +25,16 @@ function createTaskCard(task) {
     card.appendChild(priorityLevel);
     card.appendChild(notes);
 
+    content.appendChild(card);
     return card;
 }
 
 function displayArray(array) {
+    content.innerHTML='';
+
     array.forEach((task) => createTaskCard(task));
 }
+
 
 export {
     createTaskCard,

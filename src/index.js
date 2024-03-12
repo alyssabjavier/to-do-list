@@ -1,12 +1,33 @@
 import {ToDo, createToDo, createProject} from './to-do-module';
-import {createTaskCard, displayArray} from './DOM-module';
+import {createTaskCard, displayArray} from './webpage-module';
 
 const content = document.querySelector('.content');
 
-//testing
-const defaultProject = createProject();
-console.log(defaultProject);
+const dialog = document.querySelector('dialog');
 
+const addBtn = document.querySelector('.addBtn');
+addBtn.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+
+const defaultProject = createProject();
+
+const submitBtn = document.querySelector('#submit-btn');
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const formTask = document.querySelector('#task').value;
+    const formAddDate = document.querySelector('#add-date').value;
+    const formDueDate = document.querySelector('#due-date').value;
+    const formLevel = document.querySelector('#level').value;
+    const formNotes = document.querySelector('#notes').value;
+    const formProject = document.querySelector('#project').value;
+    const newFormToDo = createToDo(formTask, formAddDate, formDueDate, formLevel, formNotes, defaultProject);
+    displayArray(defaultProject);
+    dialog.close();
+});
+
+//testing
 const task1 = createToDo('to-do list project', 'today', 'this weekend', 'medium', 'might be hard', defaultProject);
 console.log(task1.title);
 
@@ -17,3 +38,4 @@ const task2 = createToDo('make Dom forms etc.', 'today', 'today hopefully', 'hig
 
 console.log(defaultProject);
 displayArray(defaultProject);
+
