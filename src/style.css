@@ -1,10 +1,102 @@
-.content {
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(244, 244, 244);
+    padding: 10px 50px;
+    color: rgb(18, 18, 17);
+}
+
+header {
     display: grid;
-    grid-template-columns: repat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+.addBtn {
+    justify-self: end;
+    padding: 10px 30px;
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    /* background-color: rgb(190, 212, 198); */
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
     gap: 10px;
 }
 
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
 .task {
-    border: 1px solid #ccc;
-    padding: 10px;
+    /* border: 1px solid #ccc; */
+    padding: 40px;
+    padding-top: 20px;
+}
+
+.card-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-main h3 {
+    cursor: pointer;
+}
+
+.card-main button {
+    /* font-size: .75rem; */
+    max-height: 2rem;
+    padding: 0 .5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.task .hidden {
+    display: none;
+}
+
+.task.expanded .hidden {
+    display: block;
+}
+
+.urgent {
+    background-color: rgb(222, 180, 180);
+}
+
+.high {
+    background-color: rgb(157, 201, 174);
+}
+
+.normal {
+    background-color: rgb(234, 229, 220);
+}
+
+.complete {
+    transition: all 0.25s ease;
+    background-color: rgb(95, 92, 87);
+    color: rgb(159, 156, 150);
+}
+
+.complete button {
+    color: rgb(159, 156, 150);
 }
