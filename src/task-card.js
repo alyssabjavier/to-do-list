@@ -1,4 +1,4 @@
-import { ToDo, removeToDo } from "./create-tasks-and-projects";
+import { ToDo, completeTask, removeToDo, saveProjectsToLocalStorage } from "./create-tasks-and-projects";
 
 const content = document.querySelector('.content');
 
@@ -6,7 +6,10 @@ function createTaskCard(task) {
     const card = document.createElement('div');
     card.classList.add('task');
 
-    // task.dataset.index = index;
+    if (task.status === 'complete') {
+         card.classList.add('complete');
+     }
+
     const cardMain = document.createElement('div');
     cardMain.classList.add('card-main');
     const title = document.createElement('h3');
@@ -42,9 +45,11 @@ function createTaskCard(task) {
     statusBtn.appendChild(toggleBtn);
     // event listener to mark task complete
     toggleBtn.addEventListener('click', () => {
-        task.completeTask();
+        completeTask(task);
         card.classList.add('complete');
+        saveProjectsToLocalStorage();
     })
+
     if (task.status === 'complete') {
         card.classList.add('complete');
         toggleBtn.checked = true;

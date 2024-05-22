@@ -1,5 +1,6 @@
 import { createTaskCard } from "./task-card";
 import { projects } from "./create-tasks-and-projects";
+import { makeProjectButton, addProjectOption } from "./dialogs-and-buttons";
 
 const content = document.querySelector('.content');
 
@@ -8,7 +9,7 @@ function displayArray(project) {
     console.log(project);
 
     project.tasks.forEach((task) => {
-        createTaskCard(task)
+        createTaskCard(task);
     });
 }
 
